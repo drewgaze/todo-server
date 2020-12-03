@@ -4,7 +4,7 @@ const getNextId = () => id++;
 
 class Todo {
   constructor({ content = "", id, date, completed = false }) {
-    this.id = id ?? getNextId();
+    this.id = id ? Number(id) : getNextId();
     this.content = content;
     this.date = date ?? Date.now();
     this.completed = completed ?? false;
